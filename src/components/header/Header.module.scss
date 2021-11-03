@@ -1,0 +1,45 @@
+@import 'src/scss/mixin';
+@import 'src/scss/variables';
+
+
+  .header_content {
+    @include container;
+    @include headerStyles;
+
+    h1 {
+      font-size: 3em;
+      font-weight: 100;
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    div {
+      position: relative;
+      right: 0;
+      top: -1.5em;
+
+
+      input {
+        border: 2px solid $white;
+        border-radius: 8px;
+        padding: 0.5em 0.5em;
+        font-size: 1.5em;
+        height: 2.3em;
+        width: 19em;
+        right: 0;
+        position: absolute;
+        color: $white;
+        background: none;
+      }
+
+      img {
+        position: absolute;
+        right: 1.2em;
+        top: 0.7em;
+        width: 1.8em
+      }
+
+    }
+
+  }
+
