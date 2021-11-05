@@ -1,4 +1,4 @@
-import searchIcon from "../../assets/images/search.svg"
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 const styles = require("./Header.module.scss");
 
@@ -13,7 +13,7 @@ const Header: React.FC = (props) => {
                         placeholder='Search Films'
                         onChange={(e) => e.target.value}
                     />
-                    <img src={searchIcon} alt="search"/>
+                    <SearchOutlinedIcon style={{fontSize: '3em', color: '#fff'}}/>
                 </div>
             </div>
         </header>

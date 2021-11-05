@@ -7,7 +7,7 @@ interface Props {}
 
 const App: React.FC<Props> = () => {
   return (
-    <div className={styles.app}>
+    <div className={styles}>
       <Home />
     </div>
   );
