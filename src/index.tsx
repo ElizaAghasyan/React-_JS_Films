@@ -5,9 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ErrorBoundary} from "react-error-boundary";
 
-
-const styles = require("./Index.module.scss");
-
 ReactDOM.render(
     <ErrorBoundary
         FallbackComponent={App}
