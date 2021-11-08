@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ErrorBoundary} from "react-error-boundary";
+
+
+const styles = require("./Index.module.scss");
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ErrorBoundary
+        FallbackComponent={App}
+        onError={(error, errorInfo) => console.log({ error, errorInfo })}
+    >
+        <React.StrictMode>
+            <Router>
+                <App />
+            </Router>
+        </React.StrictMode>,
+    </ErrorBoundary>,
   document.getElementById('root')
 );
 
