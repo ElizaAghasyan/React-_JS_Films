@@ -3,9 +3,7 @@ import Home from "./pages/Home";
 
 const styles = require("./App.module.scss");
 
-interface Props {}
-
-const App: React.FC<Props> = () => {
+const App = () => {
   return (
     <div className={styles}>
       <Home />
