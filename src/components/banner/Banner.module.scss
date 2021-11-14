@@ -1,0 +1,131 @@
+@import "src/scss/mixin";
+@import "src/scss/variables";
+
+.banner {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -6em;
+
+  .banner_content {
+    @include container;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    height: 100%;
+
+    &_info {
+      width: 50%;
+      position: relative;
+      bottom: 6em;
+
+      h2 {
+        font-family: $font-family-bold;
+        color: $white;
+        font-size: 5.5em;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+          font-weight: 100;
+          position: relative;
+          font-size: 1.3em;
+          color: $white;
+          padding: 0.5em 0.4em;
+          margin-right: 1em;
+          cursor: pointer;
+
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0.2em;
+            background-color: $white;
+            transition: width 0.5s ease-in;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+
+      button {
+        border: 0.1em solid $main-color;
+        color: $main-color;
+        background: none;
+        font-weight: bold;
+        padding: 0.1em 0.4em;
+        margin-left: 1em;
+      }
+
+      .stars {
+        display: flex;
+        margin: 2.3em 0;
+      }
+    }
+
+    .buttons {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      position: relative;
+      bottom: 8em;
+
+      button {
+        border: 0.1em solid $white;
+        background: none;
+        padding: 0.8em 1.5em;
+        font-size: 1.5em;
+        border-radius: 0.4em;
+        color: $white;
+        font-weight: 400;
+        margin: 0.5em;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 1rem 3rem rgba($main-color, 0.6);
+          background: #3bb3df;
+          border: none;
+
+          &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+            border: $main-color;
+          }
+        }
+      }
+    }
+
+    .details {
+      display: none;
+      max-width: 30em;
+      height: auto;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.3);
+      right: 0;
+      bottom: 12em;
+      padding: 1.9em 2.5em;
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .active {
+      display: block;
+    }
+  }
+}

@@ -4,6 +4,8 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ErrorBoundary} from "react-error-boundary";
+import {Provider} from "react-redux";
+import {store} from "./redux/store";
 
 ReactDOM.render(
     <ErrorBoundary
@@ -12,7 +14,9 @@ ReactDOM.render(
     >
         <React.StrictMode>
             <Router>
-                <App />
+                <Provider store={store}>
+                    <App />
+                </Provider>
             </Router>
         </React.StrictMode>,
     </ErrorBoundary>,
