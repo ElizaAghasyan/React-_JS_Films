@@ -1,31 +1,33 @@
+import {useState} from "react";
 import { useSelector } from "react-redux";
 import { getBannerMovie } from "../../redux/movieSlice";
 import { apiConfig }from "../../config/apiConfig";
-import {useState} from "react";
-// import StarRatingComponent from "react-star-rating-component";
-
+import {Rating} from "react-simple-star-rating";
 
 import styles from './Banner.module.scss';
 
 const Banner = () => {
     const movie = useSelector(getBannerMovie);
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState<boolean>(false);
+    const [rating, setRating] = useState<number | null>(movie?.vote_average);
+    let background;
 
-    const showOverview = () => {
-        setShow(!show);
-        console.log(show)
-    }
+    const handleRating = () => setRating(rating)
 
-    const background = apiConfig.imageURL(movie?.backdrop_path ? movie?.backdrop_path : movie?.poster_path)
+    const showOverview = () => setShow(!show);
+
+    movie?.backdrop_path ? background = apiConfig.imageURL(movie?.backdrop_path ? movie?.backdrop_path : movie?.poster_path)
+        : background = null
+
 
     return (
-        <div className={styles.banner} id="background"
+        <div className={styles.banner}
              style={{
-                 backgroundImage: `url(${background})`,
+                backgroundImage: `url(${background})`,
                  width: "100%"
-             }}>
+             }}
+        >
             <div className={styles.banner_content}>
-
                 <div className={styles.banner_content_info}>
                     <h2>{movie?.title || movie?.name}</h2>
                     <ul>
@@ -35,7 +37,13 @@ const Banner = () => {
                         <li>Comedy</li>
                     </ul>
                     <div className={styles.stars}>
-                        {/*<StarRatingComponent  name='app' value={5}/>*/}
+                        <Rating
+                            size={20}
+                            fillColor='#3bb3df'
+                            emptyColor='#3bb3df'
+                            onClick={handleRating}
+                            ratingValue={movie?.vote_count}
+                        />
                         <button>{movie?.vote_average}</button>
                     </div>
                 </div>

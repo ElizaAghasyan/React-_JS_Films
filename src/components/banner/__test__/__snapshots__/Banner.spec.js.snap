@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner Component Banner snapshot test 1`] = `
+<div
+  className="banner"
+  style={
+    Object {
+      "backgroundImage": "url(https:://image.tmdb.org/t/p/original/undefined)",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="banner_content"
+  >
+    <div
+      className="banner_content_info"
+    >
+      <h2 />
+      <ul>
+        <li>
+          Adventure
+        </li>
+        <li>
+          Fantasy
+        </li>
+        <li>
+          Family
+        </li>
+        <li>
+          Comedy
+        </li>
+      </ul>
+      <div
+        className="stars"
+      >
+        <span
+          className=""
+        >
+          <span
+            aria-hidden="true"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "#3bb3df",
+                "cursor": "pointer",
+                "display": "inline-flex",
+                "height": 20,
+                "transition": "",
+                "width": 20,
+              }
+            }
+          >
+            <svg
+              fill="currentColor"
+              height={20}
+              viewBox="0 0 24 24"
+              width={20}
+            >
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </span>
+          <span
+            aria-hidden="true"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "#3bb3df",
+                "cursor": "pointer",
+                "display": "inline-flex",
+                "height": 20,
+                "transition": "",
+                "width": 20,
+              }
+            }
+          >
+            <svg
+              fill="currentColor"
+              height={20}
+              viewBox="0 0 24 24"
+              width={20}
+            >
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </span>
+          <span
+            aria-hidden="true"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "#3bb3df",
+                "cursor": "pointer",
+                "display": "inline-flex",
+                "height": 20,
+                "transition": "",
+                "width": 20,
+              }
+            }
+          >
+            <svg
+              fill="currentColor"
+              height={20}
+              viewBox="0 0 24 24"
+              width={20}
+            >
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </span>
+          <span
+            aria-hidden="true"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "#3bb3df",
+                "cursor": "pointer",
+                "display": "inline-flex",
+                "height": 20,
+                "transition": "",
+                "width": 20,
+              }
+            }
+          >
+            <svg
+              fill="currentColor"
+              height={20}
+              viewBox="0 0 24 24"
+              width={20}
+            >
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </span>
+          <span
+            aria-hidden="true"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            style={
+              Object {
+                "color": "#3bb3df",
+                "cursor": "pointer",
+                "display": "inline-flex",
+                "height": 20,
+                "transition": "",
+                "width": 20,
+              }
+            }
+          >
+            <svg
+              fill="currentColor"
+              height={20}
+              viewBox="0 0 24 24"
+              width={20}
+            >
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </span>
+        </span>
+        <button />
+      </div>
+    </div>
+    <div
+      className="buttons"
+    >
+      <button>
+        Watch Now
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        View Info
+      </button>
+    </div>
+    <div
+      className="details"
+    />
+  </div>
+</div>
+`;
