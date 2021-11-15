@@ -5,6 +5,18 @@ const initialState = {
     movies: {},
 }
 
+interface MovieType  {
+    id?: string;
+    title: string;
+    overview: string;
+    poster_path: string;
+    vote_average: number;
+    backdrop_path: string;
+    vote_count: number;
+    name: string;
+}
+
+
 export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async () => {
     const params = {page: 1}
     let response = await serverApi.getMovieList(movieType.popular, {params})
@@ -12,7 +24,6 @@ export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', asyn
             console.log(err)
         })
     let result = await response?.data.results[Math.floor(Math.random() * response.data.results.length - 1)]
-    console.log(response)
     return result;
 });
 
@@ -42,7 +53,7 @@ export const movieSlice = createSlice({
 
 export const {addMovies} = movieSlice.actions;
 
-export const getBannerMovie = (state: { movies: { movies: any; } }) => state.movies.movies;
+export const getBannerMovie = (state: { movies: { movies: MovieType }}) => state.movies.movies;
 
 
 export default movieSlice.reducer;
