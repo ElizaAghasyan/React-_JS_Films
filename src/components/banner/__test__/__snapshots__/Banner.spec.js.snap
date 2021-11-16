@@ -5,7 +5,7 @@ exports[`Banner Component Banner snapshot test 1`] = `
   className="banner"
   style={
     Object {
-      "backgroundImage": "url(https:://image.tmdb.org/t/p/original/undefined)",
+      "backgroundImage": "url(null)",
       "width": "100%",
     }
   }
