@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { hot } from 'react-hot-loader';
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import {useDispatch} from "react-redux";
 import {fetchAsyncMovies} from "./redux/movieSlice";
 

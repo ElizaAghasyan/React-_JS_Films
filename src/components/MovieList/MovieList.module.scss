@@ -1,0 +1,12 @@
+@import 'src/scss/mixin';
+@import 'src/scss/variables';
+
+.cards {
+  @include container;
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  grid-gap: 10px;
+  position: relative;
+  height: auto;
+}

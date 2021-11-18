@@ -23,7 +23,7 @@ const MovieApi = {
         const url = movieType.trending + '/all/week';
         return axiosCreate.get(url, params);
     },
-    getVideos: (cat: string, id: string) => {
+    getVideos: (cat: string, id: string | undefined) => {
         const url = category[cat] + '/' + id + '/videos';
         return axiosCreate.get(url, { params: {} });
     },

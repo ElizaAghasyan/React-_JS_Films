@@ -1,8 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
+import movieApi, { category } from "../../config/movieApi";
+import TrailerModal from "../modal/TrailerModal";
 import { getBannerMovie } from "../../redux/movieSlice";
 import { apiConfig }from "../../config/apiConfig";
-import {Rating} from "react-simple-star-rating";
+import { Rating } from "react-simple-star-rating";
 
 import styles from './Banner.module.scss';
 
@@ -19,6 +21,21 @@ const Banner = () => {
     movie?.backdrop_path ? background = apiConfig.imageURL(movie?.backdrop_path ? movie?.backdrop_path : movie?.poster_path)
         : background = null
 
+    const setModalActive = async () => {
+        const modal = document.querySelector<HTMLElement>(`#modal_${movie.id}`)!;
+        const iframe = modal?.querySelector('.modal__content > iframe')!;
+        const modalContent = modal?.querySelector( '.modal__content')!;
+
+        const videos = await movieApi.getVideos(category.movie, movie?.id);
+
+        if (videos.data.results.length > 0) {
+            const videSrc = 'https://www.youtube.com/embed/' + videos.data.results[0].key;
+            iframe.setAttribute('src', videSrc);
+        } else {
+            modalContent.innerHTML = 'No trailer';
+        }
+        modal.classList.toggle('active');
+    }
 
     return (
         <div className={styles.banner}
@@ -48,12 +65,13 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className={styles.buttons}>
-                    <button>Watch Now</button>
+                    <button onClick={setModalActive}>Watch Now</button>
                     <button onClick={showOverview}>View Info</button>
                 </div>
                 <div className={show ? `${styles.active} ${styles.details}` : `${styles.details}`}>
                     {movie?.overview}
                 </div>
+                <TrailerModal id={movie?.id}/>
             </div>
         </div>
     )

@@ -4,14 +4,22 @@
 }
 
 @mixin flex($alignItems, $justContent) {
-   display: flex;
-   align-items: $alignItems;
-   justify-content: $justContent;
- }
+  align-items: $alignItems;
+  justify-content: $justContent;
+}
 
- @mixin headerStyles () {
-   height: 6em;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
- }
+@mixin flexRow ($flex, $flexDir) {
+  display: $flex;
+  flex-direction: $flexDir;
+}
+
+@mixin headerStyles() {
+  height: 6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin overlay {
+  background-color: rgba(#000, 0.3);
+}
