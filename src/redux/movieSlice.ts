@@ -6,7 +6,7 @@ const initialState = {
 }
 
 interface MovieType  {
-    id?: string;
+    id: number;
     title: string;
     overview: string;
     poster_path: string;

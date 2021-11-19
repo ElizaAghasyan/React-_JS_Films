@@ -15,18 +15,17 @@
   opacity: 0;
   visibility: hidden;
 
-  &.active {
+  &_active {
     opacity: 1;
     visibility: visible;
   }
 
   &__content {
-    width: 80%;
-    padding: 2em;
-    border: none;
-    background: $black;
     border-radius: 2em;
-    max-height: 53em;
+    position: absolute;
+    top: 2rem;
+    width: 95%;
+    background: $black;
+    padding: 2rem;
   }
-
 }

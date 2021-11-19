@@ -19,11 +19,11 @@ type MovieListProps = {
 const MovieList = ({items} : MovieListProps) => {
     return (
         <div className={styles.cards}>
-            {/*{*/}
-            {/*    items?.map((item, i) => (*/}
-            {/*        <div key={i}>{item}</div>*/}
-            {/*    ))*/}
-            {/*}*/}
+            {
+                items?.map((item, ) => (
+                    <div key={item.id}>{item?.title}</div>
+                ))
+            }
         </div>
     );
 }

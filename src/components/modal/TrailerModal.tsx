@@ -1,24 +1,61 @@
-import {useRef} from "react";
-import Modal, {ModalContent} from "./Modal";
+import React, { useEffect, useRef } from "react";
+import movieApi, { category } from "../../config/movieApi";
+import { useSelector } from "react-redux";
+import { getBannerMovie } from "../../redux/movieSlice";
 
-import './Modal.scss';
+import './TrailerModal.scss';
+import CloseIcon from "@mui/icons-material/Close";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+    close: {
+        position: 'absolute',
+        fontSize: '2.5rem',
+        top: '1.1rem',
+        right: '1rem',
+        color: '#fefefe',
+        cursor: 'pointer'
+    }
+});
 
 type TrailerModalType = {
-    id?: string;
+    active: boolean
 };
 
-const TrailerModal = ({id}: TrailerModalType )=> {
+const TrailerModal = ({ active }: TrailerModalType )=> {
+    const { id } = useSelector(getBannerMovie);
     const iframeRef = useRef<HTMLIFrameElement>(null);
+    const modalRef = useRef<HTMLIFrameElement>(null);
+    const classes = useStyles();
 
-    const onClose = () => iframeRef.current && iframeRef.current.setAttribute('src', '');
+    useEffect(() => {
+        const getVideos = async () => {
+            let  videos;
+            if(id) {
+                videos = await movieApi.getVideos(category.movie, id);
+            }
+
+            if (videos?.data.results && videos.data.results.length > 0) {
+                const videSrc = 'https://www.youtube.com/embed/' + videos.data.results[0].key;
+                iframeRef.current && iframeRef.current.setAttribute('src', videSrc);
+            }
+        }
+        getVideos()
+    }, [id])
+
+    const onClose = () => {
+        iframeRef.current && iframeRef.current.setAttribute('src', '');
+        modalRef.current && modalRef.current.classList.remove('modal_active');
+    }
 
     return (
-        <Modal active={false} id={`modal_${id}`}>
-            <ModalContent onClose={onClose} className="modal__content">
+        <div ref={modalRef} className={active ? `modal modal_active` : `modal`}>
+            <div className="modal__content">
                 <iframe ref={iframeRef} width="100%" height="500px" title="trailer" frameBorder="0" >
                 </iframe>
-            </ModalContent>
-        </Modal>
+            </div>
+            <CloseIcon onClick={onClose} className={classes.close} />
+        </div>
     )
 }
 
