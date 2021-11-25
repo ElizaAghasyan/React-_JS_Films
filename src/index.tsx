@@ -13,11 +13,11 @@ ReactDOM.render(
         onError={(error, errorInfo) => console.log({ error, errorInfo })}
     >
         <React.StrictMode>
-            <Router>
-                <Provider store={store}>
+            <Provider store={store}>
+                <Router>
                     <App />
-                </Provider>
-            </Router>
+                </Router>
+            </Provider>
         </React.StrictMode>,
     </ErrorBoundary>,
   document.getElementById('root')

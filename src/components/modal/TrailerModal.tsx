@@ -41,7 +41,7 @@ const TrailerModal = ({ active }: TrailerModalType )=> {
             }
         }
         getVideos()
-    }, [id])
+    }, )
 
     const onClose = () => {
         iframeRef.current && iframeRef.current.setAttribute('src', '');

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector }  from "react-redux";
 import TrailerModal from "../modal/TrailerModal";
 import { getBannerMovie } from "../../redux/movieSlice";
-import { apiConfig }from "../../config/apiConfig";
+import { apiConfig } from "../../config/apiConfig";
 import { Rating } from "react-simple-star-rating";
 
 import styles from './Banner.module.scss';
@@ -25,10 +25,10 @@ const Banner = () => {
 
     return (
         <div className={styles.banner}
-             style={{
+            style={{
                 backgroundImage: `url(${background})`,
-                 width: "100%"
-             }}
+                width: "100%"
+            }}
         >
             <div className={styles.banner_content}>
                 <div className={styles.banner_content_info}>

@@ -1,17 +1,17 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { hot } from 'react-hot-loader';
 import Home from "./pages/home/Home";
-import {useDispatch} from "react-redux";
-import {fetchAsyncMovies} from "./redux/movieSlice";
+import { useDispatch } from "react-redux";
+import { fetchAsyncMovies } from "./redux/movieSlice";
 
 const styles = require("./App.module.scss");
 
 const App = () => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(fetchAsyncMovies());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchAsyncMovies());
+  }, [dispatch]);
 
   return (
     <div className={styles}>
