@@ -1,0 +1,31 @@
+@import 'src/scss/mixin';
+@import 'src/scss/variables';
+
+.modal {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba($black, 0.4);
+  opacity: 0;
+  visibility: hidden;
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    border-radius: 2em;
+    position: absolute;
+    top: 2rem;
+    width: 95%;
+    background: $black;
+    padding: 2rem;
+  }
+}

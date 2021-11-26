@@ -1,14 +1,16 @@
-import {useState} from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector }  from "react-redux";
+import TrailerModal from "../modal/TrailerModal";
 import { getBannerMovie } from "../../redux/movieSlice";
-import { apiConfig }from "../../config/apiConfig";
-import {Rating} from "react-simple-star-rating";
+import { apiConfig } from "../../config/apiConfig";
+import { Rating } from "react-simple-star-rating";
 
 import styles from './Banner.module.scss';
 
 const Banner = () => {
     const movie = useSelector(getBannerMovie);
     const [show, setShow] = useState<boolean>(false);
+    const [active, setActive] = useState<boolean>(false)
     const [rating, setRating] = useState<number | null>(movie?.vote_average);
     let background;
 
@@ -19,13 +21,14 @@ const Banner = () => {
     movie?.backdrop_path ? background = apiConfig.imageURL(movie?.backdrop_path ? movie?.backdrop_path : movie?.poster_path)
         : background = null
 
+    const setModalActive = () => setActive(!active);
 
     return (
         <div className={styles.banner}
-             style={{
+            style={{
                 backgroundImage: `url(${background})`,
-                 width: "100%"
-             }}
+                width: "100%"
+            }}
         >
             <div className={styles.banner_content}>
                 <div className={styles.banner_content_info}>
@@ -48,12 +51,13 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className={styles.buttons}>
-                    <button>Watch Now</button>
+                    <button onClick={setModalActive}>Watch Now</button>
                     <button onClick={showOverview}>View Info</button>
                 </div>
                 <div className={show ? `${styles.active} ${styles.details}` : `${styles.details}`}>
                     {movie?.overview}
                 </div>
+                <TrailerModal active={active} />
             </div>
         </div>
     )
