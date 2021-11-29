@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieList Component MovieList snapshot test 1`] = `
+exports[`movieList Component movieList snapshot test 1`] = `
 <div
   className="cards"
 />
