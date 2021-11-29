@@ -46,11 +46,35 @@ const Home = () => {
         setPage(page + 1)
     }
 
+    const handleClick = (e: { target: HTMLElement }) => {
+        const getData = async () => {
+            let response = null;
+            let li = e.target.innerText
+            const params = {}
+            switch (li) {
+                case 'Top Rated':
+                    response = await movieApi.getMovieList(movieType.top_rated, {params});
+                    break;
+                case 'Trending':
+                    response = await movieApi.getTrending(movieType.trending, {params});
+                    break;
+                case 'Coming Soon':
+                    response = await movieApi.getMovieList(movieType.upcoming, {params: {page: 2}});
+                    break;
+                default:
+                    response = await movieApi.getMovieList(movieType.popular, {params: {page: 2}});
+                    break;
+            }
+            setMovie(response.data.results.slice(0, 16));
+        }
+        getData();
+    }
+
     return (
         <div className={styles.wrapper}>
             <Header />
             <Banner />
-            <Navigation />
+            <Navigation click={handleClick} />
             <MovieList item={movie} category={category.movie} />
             <div onClick={loadMore}>
                 <LoadingDots  />

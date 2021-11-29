@@ -39,7 +39,7 @@ const MovieApi = {
         const url = category[cate] + '/' + id + '/credits';
         return axiosCreate.get(url, { params: {} });
     },
-    similar: (cate: string, id: string) => {
+    similar: (cate: string, id: string | number) => {
         const url = category[cate] + '/' + id + '/similar';
         return axiosCreate.get(url, { params: {} });
     }

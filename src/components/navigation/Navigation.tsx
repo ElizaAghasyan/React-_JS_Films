@@ -22,14 +22,18 @@ const navigation = [
     },
 ]
 
-const Navigation = () => {
-  return (
+type KeyboardEvent = {
+    click: (e: any) => void
+};
+
+const Navigation = (props: KeyboardEvent) => {
+    return (
       <section className={styles.content}>
           <div className={styles.button_content}>
               <ul>
                   {
                       navigation.map((heading, i) => (
-                          <li value={heading.display} key={i} className={styles.buttons}>
+                          <li onClick={props.click} value={heading.display} key={i} className={styles.buttons}>
                               {heading.display}
                           </li>
                       ))
