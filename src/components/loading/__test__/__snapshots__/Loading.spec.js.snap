@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Component Loading snapshot test 1`] = `
+<div
+  className="dots"
+>
+  <div
+    className="spinner"
+  >
+    <div
+      className="bounce1"
+    >
+       
+    </div>
+    <div
+      className="bounce2"
+    >
+       
+    </div>
+    <div
+      className="bounce3"
+    >
+       
+    </div>
+  </div>
+  <p>
+    LOADING
+  </p>
+</div>
+`;

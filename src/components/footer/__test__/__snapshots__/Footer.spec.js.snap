@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component Footer snapshot test 1`] = `
+<div
+  className="footer"
+>
+  <h4>
+    Films
+  </h4>
+  <p>
+    Copyright © 2018 FILMS. YOUR NAME
+  </p>
+</div>
+`;

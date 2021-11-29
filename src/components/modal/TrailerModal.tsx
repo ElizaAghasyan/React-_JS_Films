@@ -19,11 +19,11 @@ const useStyles = makeStyles({
 });
 
 type TrailerModalType = {
-    active: boolean
+    active: boolean;
+    id: number
 };
 
-const TrailerModal = ({ active }: TrailerModalType )=> {
-    const { id } = useSelector(getBannerMovie);
+const TrailerModal = ({ active, id }: TrailerModalType ) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const modalRef = useRef<HTMLIFrameElement>(null);
     const classes = useStyles();

@@ -1,0 +1,101 @@
+import {Link, Route} from "react-router-dom";
+import { apiConfig } from "../../config/apiConfig";
+import { category } from "../../config/movieApi";
+import { useRef, useState } from "react";
+import TrailerModal from "../modal/TrailerModal";
+
+import styles from './MovieCard.module.scss';
+import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
+import { makeStyles } from "@mui/styles";
+import CloseIcon from "@mui/icons-material/Close";
+
+
+const useStyles = makeStyles({
+    play: {
+        position: 'absolute',
+        fontSize: '10rem',
+        top: 'calc(50% - 10rem)',
+        left: 'calc(50% - 5rem)',
+        transform: 'translateY(-50%, -50%)',
+        fill: '#3BB3DFFF',
+        cursor: 'pointer'
+    },
+    close: {
+        position: 'absolute',
+        fontSize: '2.5em',
+        top: '0.5em',
+        left: '1em',
+        color: '#fefefe',
+        cursor: 'pointer'
+    }
+});
+
+type movieCardProps = {
+    item: {
+        id: number;
+        title: string;
+        overview: string;
+        poster_path: string;
+        vote_average: number;
+        backdrop_path: string;
+        vote_count: number;
+        name: string;
+    }
+}
+
+const MovieCard = ({item}: movieCardProps) => {
+    const [active, setActive] = useState<boolean>(false)
+    const classes = useStyles();
+    const detailsRef = useRef<HTMLIFrameElement | null>(null);
+
+    // const link = '/' + category.movie + '/' + item?.id;
+
+    const bg = apiConfig.w500(item?.poster_path || item?.backdrop_path);
+
+    const setModalActive = () => setActive(!active);
+
+    const handleClick = () => {
+        if(detailsRef.current && detailsRef.current.classList.contains(styles.detailSide_active)) {
+            detailsRef.current.classList.remove(styles.detailSide_active)
+        }else {
+            detailsRef.current && detailsRef.current.classList.add(styles.detailSide_active)
+        }
+    }
+
+    return (
+        <div className={styles.card}>
+            <div className={`${styles.card_side_front} ${styles.card_side} `}>
+                <div className={styles.card_pic} style={{backgroundImage: `url(${bg})`}}>
+                </div>
+                <div className={styles.card_description}>
+                    {/*<Link to={link}>*/}
+                        <h3 className={styles.card_heading}>{item?.title || item?.name}</h3>
+                    {/*</Link>*/}
+                    <p className={styles.card_genre}>Adventure Comedy Family</p>
+                    <button className={styles.card_rating}>{item?.vote_average}</button>
+                </div>
+            </div>
+            <div className={`${styles.card_side_back} ${styles.card_side}`}>
+                <PlayCircleFilledIcon className={classes.play}/>
+                <h3 className={styles.card_watch}>Watch Now</h3>
+                <button onClick={handleClick} className={styles.card_btn}>View Info</button>
+            </div>
+            <div ref={detailsRef} className={styles.detailSide}>
+                <CloseIcon onClick={handleClick} className={classes.close}/>
+                <div style={{backgroundImage: `url(${bg})`, height: '50rem'}}>
+                    <div className={styles.content}>
+                        <div className={styles.content_overlay}>
+                            <h3>{item?.title || item?.name}</h3>
+                            <p className={styles.card_genre}>Adventure Comedy Family</p>
+                            <p className={styles.overview}>{item?.overview}</p>
+                            <button onClick={setModalActive} className={styles.card_btn}>Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <TrailerModal active={active} id={item?.id}/>
+        </div>
+    );
+}
+
+export default MovieCard;

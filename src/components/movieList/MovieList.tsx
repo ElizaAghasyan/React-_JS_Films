@@ -1,7 +1,8 @@
 import styles from './MovieList.module.scss';
+import MovieCard from "../movieCard/MovieCard";
 
 interface Item {
-    id?: string;
+    id: number;
     title: string;
     overview: string;
     poster_path: string;
@@ -12,16 +13,16 @@ interface Item {
 }
 
 type MovieListProps = {
-    items: Item[];
+    item: Item[];
     category: {}
 }
 
-const MovieList = ({items} : MovieListProps) => {
+const MovieList = (props: MovieListProps) => {
     return (
         <div className={styles.cards}>
             {
-                items?.map((item, ) => (
-                    <div key={item.id}>{item?.title}</div>
+                props.item?.map((item ) => (
+                    <MovieCard key={item.id} item={item}/>
                 ))
             }
         </div>

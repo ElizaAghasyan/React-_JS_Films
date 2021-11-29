@@ -330,5 +330,45 @@ exports[`Home Component Home snapshot test 1`] = `
   <div
     className="cards"
   />
+  <div
+    onClick={[Function]}
+  >
+    <div
+      className="dots"
+    >
+      <div
+        className="spinner"
+      >
+        <div
+          className="bounce1"
+        >
+           
+        </div>
+        <div
+          className="bounce2"
+        >
+           
+        </div>
+        <div
+          className="bounce3"
+        >
+           
+        </div>
+      </div>
+      <p>
+        LOADING
+      </p>
+    </div>
+  </div>
+  <div
+    className="footer"
+  >
+    <h4>
+      Films
+    </h4>
+    <p>
+      Copyright © 2018 FILMS. YOUR NAME
+    </p>
+  </div>
 </div>
 `;

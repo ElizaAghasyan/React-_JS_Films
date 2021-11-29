@@ -57,7 +57,7 @@ const Banner = () => {
                 <div className={show ? `${styles.active} ${styles.details}` : `${styles.details}`}>
                     {movie?.overview}
                 </div>
-                <TrailerModal active={active} />
+                <TrailerModal active={active} id={movie?.id}/>
             </div>
         </div>
     )

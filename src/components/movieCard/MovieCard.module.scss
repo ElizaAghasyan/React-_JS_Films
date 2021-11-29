@@ -1,0 +1,162 @@
+@import 'src/scss/mixin';
+@import 'src/scss/variables';
+
+
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  &_side {
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($black, .15);
+
+
+    &_front {
+      background-color: $white;
+      height: 50rem;
+    }
+
+    &_back {
+      transform: rotateX(180deg);
+      height: 40rem;
+    }
+  }
+
+  &:hover &_side_back {
+    transform: rotateX(0);
+    background: rgba($black, .4);
+  }
+
+  &_pic {
+    background-size: cover;
+    height: 40rem;
+    background-blend-mode: screen;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  &_description {
+    padding: 2.5rem 1.5rem 1rem;
+    position: relative;
+  }
+
+  &_heading {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    color: #242b2d;
+    width: 85%;
+  }
+
+  &_genre {
+    color: $main-color;
+    margin-top: .3rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+  }
+
+  &_rating {
+    border: 0.1em solid $main-color;
+    color: $main-color;
+    background: none;
+    font-weight: bold;
+    padding: 0.1em 0.4em;
+    position: absolute;
+    right: 2rem;
+    top: 2.8rem;
+  }
+
+  &_cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &_watch {
+    position: absolute;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    font-weight: 300;
+    left: 38%;
+    top: 50%;
+    color: $white;
+  }
+
+  &_btn {
+    border: 0.1em solid $white;
+    background: none;
+    padding: 0.8em 1.5em;
+    font-size: 1.5em;
+    border-radius: 0.4em;
+    color: $white;
+    font-weight: 400;
+    margin: 0.5em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10rem;
+    left: 33%;
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+      border: $main-color;
+    }
+  }
+
+  .detailSide {
+    display: none;
+    height: 50rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba($black, 0.4);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &_active {
+      z-index: 99;
+      display: block;
+    }
+
+    .content {
+      height: 100%;
+      width: 100%;
+      background-color: rgba($black, .5);
+
+      &_overlay {
+        padding: 7rem 1.5rem;
+
+        h3 {
+          color: $white;
+        }
+
+        .overview {
+          padding: 1.5rem 0;
+          font-size: 1.2rem;
+          color: #fff;
+          width: 100%;
+        }
+
+        button {
+          left: 1rem;
+          bottom: 7rem;
+        }
+      }
+    }
+  }
+}
