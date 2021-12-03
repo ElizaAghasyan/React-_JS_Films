@@ -23,7 +23,7 @@ const MovieApi = {
         const url = movieType.trending + '/all/week';
         return axiosCreate.get(url, params);
     },
-    getVideos: (cat: string, id: number) => {
+    getVideos: (cat: string, id: number | string) => {
         const url = category[cat] + '/' + id + '/videos';
         return axiosCreate.get(url, { params: {} });
     },
@@ -31,11 +31,11 @@ const MovieApi = {
         const url = 'search/' + category[query];
         return axiosCreate.get(url, params);
     },
-    detail: (cate: string, id: string, params: {}) => {
+    detail: (cate: string, id: string | number, params: {}) => {
         const url = category[cate] + '/' + id;
         return axiosCreate.get(url, params);
     },
-    credits: (cate: string, id: string) => {
+    credits: (cate: string, id: string | number) => {
         const url = category[cate] + '/' + id + '/credits';
         return axiosCreate.get(url, { params: {} });
     },

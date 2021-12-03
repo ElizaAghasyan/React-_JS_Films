@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import movieApi, { category } from "../../config/movieApi";
-import { useSelector } from "react-redux";
-import { getBannerMovie } from "../../redux/movieSlice";
 
 import './TrailerModal.scss';
 import CloseIcon from "@mui/icons-material/Close";

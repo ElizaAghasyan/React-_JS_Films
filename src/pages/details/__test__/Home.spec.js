@@ -1,20 +1,21 @@
+import Details from "../Details";
 import renderer from "react-test-renderer";
-import { Provider } from "react-redux";
-import { store } from "../../../redux/store";
-import MovieCard from '../MovieCard';
-import {Router} from "react-router-dom";
+import {store} from "../../../redux/store";
+import {Provider} from "react-redux";
 import { createMemoryHistory } from 'history';
+import {Router} from "react-router-dom";
 
-describe('MovieCard Component', () => {
+describe('Details Component', () => {
 
-    it('MovieCard snapshot test', () => {
+    it('Details snapshot test', () => {
+
         const history = createMemoryHistory();
-        const route = '/';
+        const route = '/:category/:id';
         history.push(route);
         const component = renderer.create(
             <Provider store={store}>
                 <Router history={history}>
-                    <MovieCard />
+                    <Details />
                 </Router>
             </Provider>);
         const tree = component.toJSON();

@@ -1,4 +1,4 @@
-import {Link, Route} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { apiConfig } from "../../config/apiConfig";
 import { category } from "../../config/movieApi";
 import { useRef, useState } from "react";
@@ -48,7 +48,7 @@ const MovieCard = ({item}: movieCardProps) => {
     const classes = useStyles();
     const detailsRef = useRef<HTMLIFrameElement | null>(null);
 
-    // const link = '/' + category.movie + '/' + item?.id;
+    const link = '/' + category.movie + '/' + item?.id;
 
     const bg = apiConfig.w500(item?.poster_path || item?.backdrop_path);
 
@@ -68,9 +68,9 @@ const MovieCard = ({item}: movieCardProps) => {
                 <div className={styles.card_pic} style={{backgroundImage: `url(${bg})`}}>
                 </div>
                 <div className={styles.card_description}>
-                    {/*<Link to={link}>*/}
+                    <Link to={link}>
                         <h3 className={styles.card_heading}>{item?.title || item?.name}</h3>
-                    {/*</Link>*/}
+                    </Link>
                     <p className={styles.card_genre}>Adventure Comedy Family</p>
                     <button className={styles.card_rating}>{item?.vote_average}</button>
                 </div>
