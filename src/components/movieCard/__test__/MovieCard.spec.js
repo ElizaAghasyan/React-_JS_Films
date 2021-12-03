@@ -6,7 +6,6 @@ import {Router} from "react-router-dom";
 import { createMemoryHistory } from 'history';
 
 describe('MovieCard Component', () => {
-
     it('MovieCard snapshot test', () => {
         const history = createMemoryHistory();
         const route = '/';
