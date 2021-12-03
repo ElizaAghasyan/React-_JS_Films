@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { hot } from 'react-hot-loader';
-import Home from "./pages/home/Home";
 import { useDispatch } from "react-redux";
 import { fetchAsyncMovies } from "./redux/movieSlice";
+import {Routes} from "./routes/Routes";
+import {Route} from "react-router-dom";
 
 const styles = require("./App.module.scss");
 
@@ -15,7 +16,11 @@ const App = () => {
 
   return (
     <div className={styles}>
-      <Home />
+      <Route render={() => (
+         <div className={styles}>
+          <Routes />
+        </div>
+      )}/>
     </div>
   );
 }

@@ -22,7 +22,7 @@ const MovieList = (props: MovieListProps) => {
         <div className={styles.cards}>
             {
                 props.item?.map((item ) => (
-                    <MovieCard key={item.id} item={item}/>
+                    <MovieCard key={item.id} item={item} />
                 ))
             }
         </div>

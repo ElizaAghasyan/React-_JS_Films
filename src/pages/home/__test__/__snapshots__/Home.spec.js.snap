@@ -263,24 +263,28 @@ exports[`Home Component Home snapshot test 1`] = `
       <ul>
         <li
           className="buttons"
+          onClick={[Function]}
           value="Popular"
         >
           Popular
         </li>
         <li
           className="buttons"
+          onClick={[Function]}
           value="Trending"
         >
           Trending
         </li>
         <li
           className="buttons"
+          onClick={[Function]}
           value="Top Rated"
         >
           Top Rated
         </li>
         <li
           className="buttons"
+          onClick={[Function]}
           value="Coming Soon"
         >
           Coming Soon
@@ -340,17 +344,17 @@ exports[`Home Component Home snapshot test 1`] = `
         className="spinner"
       >
         <div
-          className="bounce1"
+          className="dot1"
         >
            
         </div>
         <div
-          className="bounce2"
+          className="dot2"
         >
            
         </div>
         <div
-          className="bounce3"
+          className="dot3"
         >
            
         </div>

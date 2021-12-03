@@ -65,6 +65,7 @@
     "@types/source-map": "0.5.0",
     "@types/uglify-js": "^2.6.28",
     "eslint-config-react-app": "^6.0.0",
+    "history": "^5.1.0",
     "react-hot-loader": "^4.13.0",
     "redux-mock-store": "^1.5.4",
     "webpack-env": "^0.8.0"
