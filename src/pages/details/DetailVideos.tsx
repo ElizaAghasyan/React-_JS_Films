@@ -10,7 +10,7 @@ const DetailVideos = () => {
     useEffect(() => {
         const getVideos = async () => {
             const res = await movieApi.getVideos(category, id);
-            setVideos(res.data.results);
+            setVideos(res.data.results.slice(0, 4));
         }
         getVideos();
     }, [category, id]);
@@ -43,7 +43,7 @@ const Video = ({item}: videoProps) => {
     const iframeRef = useRef<HTMLIFrameElement>(null!);
 
     useEffect(() => {
-        const height = iframeRef.current && iframeRef.current.offsetWidth * 9 / 16 + 'px';
+        const height = iframeRef.current && iframeRef.current.offsetWidth * 7 / 10 + 'px';
         iframeRef.current && iframeRef.current.setAttribute('height', height);
     }, []);
 

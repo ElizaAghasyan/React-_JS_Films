@@ -8,12 +8,9 @@ const LoadingDots = () => {
         <div className={styles.dots}>
             {loading ?(
                 <>
-                    <div className={styles.spinner}>
-                        <div className={styles.dot1}> </div>
-                        <div className={styles.dot2}> </div>
-                        <div className={styles.dot3}> </div>
+                    <div className={styles.loading}>
+                        <button className={styles.loading_btn}>Loading</button>
                     </div>
-                    <p>LOADING</p>
                 </>
             ) : null}
         </div>

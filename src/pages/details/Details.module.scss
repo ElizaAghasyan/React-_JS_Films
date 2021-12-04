@@ -3,7 +3,7 @@
 
 .header_styles {
   width: 100%;
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.3);
   height: 7rem;
   position: fixed;
   z-index: 1;
@@ -26,6 +26,7 @@
     margin-top: 7rem;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 5rem;
 
 
     &_item {
@@ -120,6 +121,12 @@
 
   &_item {
     margin-right: 1.5rem;
+
+    &_list {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 1rem;
+    }
 
     &_names {
       margin-top: 2rem;

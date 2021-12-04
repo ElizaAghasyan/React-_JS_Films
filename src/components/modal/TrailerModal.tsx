@@ -49,7 +49,7 @@ const TrailerModal = ({ active, id }: TrailerModalType ) => {
     return (
         <div ref={modalRef} className={active ? `modal modal_active` : `modal`}>
             <div className="modal__content">
-                <iframe ref={iframeRef} width="100%" height="500px" title="trailer" frameBorder="0" >
+                <iframe ref={iframeRef} width="100%" height="450px" title="trailer" frameBorder="0" >
                 </iframe>
             </div>
             <CloseIcon onClick={onClose} className={classes.close} />

@@ -12,11 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 const useStyles = makeStyles({
     play: {
-        position: 'absolute',
         fontSize: '10rem',
-        top: 'calc(50% - 10rem)',
-        left: 'calc(50% - 5rem)',
-        transform: 'translateY(-50%, -50%)',
         fill: '#3BB3DFFF',
         cursor: 'pointer'
     },
@@ -58,7 +54,7 @@ const MovieCard = ({item}: movieCardProps) => {
         if(detailsRef.current && detailsRef.current.classList.contains(styles.detailSide_active)) {
             detailsRef.current.classList.remove(styles.detailSide_active)
         }else {
-            detailsRef.current && detailsRef.current.classList.add(styles.detailSide_active)
+            detailsRef.current && detailsRef.current.classList.add(styles.detailSide_active);
         }
     }
 
@@ -68,27 +64,34 @@ const MovieCard = ({item}: movieCardProps) => {
                 <div className={styles.card_pic} style={{backgroundImage: `url(${bg})`}}>
                 </div>
                 <div className={styles.card_description}>
-                    <Link to={link}>
-                        <h3 className={styles.card_heading}>{item?.title || item?.name}</h3>
-                    </Link>
-                    <p className={styles.card_genre}>Adventure Comedy Family</p>
+                    <div className={styles.card_description_header}>
+                        <Link to={link}>
+                            <h3 className={styles.card_heading}>{item?.title || item?.name}</h3>
+                        </Link>
+                        <p className={styles.card_genre}>Adventure Comedy Family</p>
+                    </div>
                     <button className={styles.card_rating}>{item?.vote_average}</button>
                 </div>
             </div>
             <div className={`${styles.card_side_back} ${styles.card_side}`}>
-                <PlayCircleFilledIcon className={classes.play}/>
+                <PlayCircleFilledIcon onClick={setModalActive} className={classes.play}/>
                 <h3 className={styles.card_watch}>Watch Now</h3>
                 <button onClick={handleClick} className={styles.card_btn}>View Info</button>
             </div>
             <div ref={detailsRef} className={styles.detailSide}>
                 <CloseIcon onClick={handleClick} className={classes.close}/>
-                <div style={{backgroundImage: `url(${bg})`, height: '50rem'}}>
+                <div style={{backgroundImage: `url(${bg})`, height: '52rem'}}>
                     <div className={styles.content}>
                         <div className={styles.content_overlay}>
                             <h3>{item?.title || item?.name}</h3>
                             <p className={styles.card_genre}>Adventure Comedy Family</p>
-                            <p className={styles.overview}>{item?.overview}</p>
-                            <button onClick={setModalActive} className={styles.card_btn}>Watch Now</button>
+                            <div className={styles.overview_style}>
+                                <p className={styles.overview}>{item?.overview}</p>
+                            </div>
+                            <button onClick={setModalActive} className={`${styles.btn_overlay} ${styles.left}`}>Watch Now</button>
+                            <Link to={link}>
+                                <button onClick={setModalActive} className={`${styles.btn_overlay} ${styles.right}`}>See Details</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
