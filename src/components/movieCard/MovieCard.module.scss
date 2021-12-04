@@ -21,18 +21,27 @@
 
     &_front {
       background-color: $white;
-      height: 50rem;
+      height: 52rem;
     }
 
     &_back {
       transform: rotateX(180deg);
       height: 40rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 
-  &:hover &_side_back {
+  &:not(.detailSide-active):hover &_side_back{
     transform: rotateX(0);
     background: rgba($black, .4);
+  }
+
+  .noHover {
+    transform: rotateX(180deg);
+    background: none;
   }
 
   &_pic {
@@ -44,9 +53,17 @@
   }
 
   &_description {
-    padding: 2.5rem 1.5rem 1rem;
+    padding: 1.5rem 1rem 0.1rem;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &_header {
+      width: 78%;
+    }
   }
+
 
   &_heading {
     font-size: 1.2rem;
@@ -54,7 +71,7 @@
     letter-spacing: .1rem;
     font-weight: 600;
     color: #242b2d;
-    width: 85%;
+    overflow: hidden;
   }
 
   &_genre {
@@ -70,10 +87,8 @@
     color: $main-color;
     background: none;
     font-weight: bold;
-    padding: 0.1em 0.4em;
-    position: absolute;
-    right: 2rem;
-    top: 2.8rem;
+    padding: 0.3rem 0.5rem;
+    height: 3rem;
   }
 
   &_cta {
@@ -86,12 +101,9 @@
   }
 
   &_watch {
-    position: absolute;
     font-size: 1.5rem;
     letter-spacing: .1rem;
     font-weight: 300;
-    left: 38%;
-    top: 50%;
     color: $white;
   }
 
@@ -105,9 +117,6 @@
     font-weight: 400;
     margin: 0.5em;
     cursor: pointer;
-    position: absolute;
-    bottom: 10rem;
-    left: 33%;
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -115,6 +124,8 @@
       border: $main-color;
     }
   }
+
+
 
   .detailSide {
     display: none;
@@ -145,16 +156,31 @@
           color: $white;
         }
 
-        .overview {
-          padding: 1.5rem 0;
-          font-size: 1.2rem;
-          color: #fff;
-          width: 100%;
+        .overview_style {
+          min-height: 26rem;
+          overflow: hidden;
+
+          .overview {
+            padding: 1.5rem 0;
+            font-size: 1.2rem;
+            color: #fff;
+            width: 100%;
+          }
         }
 
-        button {
+
+        .btn_overlay {
           left: 1rem;
-          bottom: 7rem;
+          border: 0.1em solid $white;
+          background: none;
+          padding: 0.8em 1.5em;
+          font-size: 1.5em;
+          border-radius: 0.4em;
+          color: $white;
+          font-weight: 400;
+          margin: 0.5em;
+          cursor: pointer;
+          bottom: 3rem;
         }
       }
     }

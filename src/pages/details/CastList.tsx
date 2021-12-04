@@ -31,18 +31,23 @@ const CastList = () => {
     }, [category, id]);
 
 
+
+
     return (
         <div className={styles.cast}>
             {
                 cast.map((item, i) => (
                     <div key={i} className={styles.cast_item}>
-                        <div className={styles.cast_poster} style={{backgroundImage: `url(${apiConfig.w500(item.profile_path ? item.profile_path : '')})`}}> </div>
+                        <div className={styles.cast_item_list}>
+                            <div className={styles.cast_poster} style={{backgroundImage: `url(${apiConfig.w500(item.profile_path ? item.profile_path : '')})`}}>
+                            </div>
+                        </div>
                         <p className={styles.cast_item_names}>{item.name}</p>
                     </div>
                 ))
             }
         </div>
-    );
+    )
 }
 
 export default CastList;

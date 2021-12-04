@@ -10,7 +10,7 @@ const Header = () => {
                     placeholder='Search Films'
                     onChange={(e) => e.target.value}
                 />
-                <SearchOutlinedIcon style={{fontSize: '3em', color: '#fff'}}/>
+                <SearchOutlinedIcon style={{fontSize: '2.3em', color: '#fff', margin: '0.4rem'}}/>
             </div>
         </div>
     );
