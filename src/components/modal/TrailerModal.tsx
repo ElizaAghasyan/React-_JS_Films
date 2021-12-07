@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 type TrailerModalType = {
     active: boolean;
-    id: number
+    id: number | string
 };
 
 const TrailerModal = ({ active, id }: TrailerModalType ) => {
