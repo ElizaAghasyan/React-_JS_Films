@@ -1,7 +1,6 @@
 @import 'src/scss/mixin';
 @import 'src/scss/variables';
 
-
 .card {
   perspective: 150rem;
   position: relative;
@@ -25,7 +24,7 @@
     }
 
     &_back {
-      transform: rotateX(180deg);
+      transform: scale(0);
       height: 40rem;
       display: flex;
       flex-direction: column;
@@ -34,14 +33,9 @@
     }
   }
 
-  &:not(.detailSide-active):hover &_side_back{
-    transform: rotateX(0);
+  &:hover &_side_back {
+    transform: scale(1);
     background: rgba($black, .4);
-  }
-
-  .noHover {
-    transform: rotateX(180deg);
-    background: none;
   }
 
   &_pic {
@@ -63,7 +57,6 @@
       width: 78%;
     }
   }
-
 
   &_heading {
     font-size: 1.2rem;
@@ -125,8 +118,6 @@
     }
   }
 
-
-
   .detailSide {
     display: none;
     height: 50rem;
@@ -167,7 +158,6 @@
             width: 100%;
           }
         }
-
 
         .btn_overlay {
           left: 1rem;

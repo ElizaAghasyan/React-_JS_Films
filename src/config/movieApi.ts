@@ -1,4 +1,4 @@
-import { axiosCreate } from './axiosCreate';
+import {axiosCreate} from './axiosCreate';
 
 type categoryType = {[key:string]: string}
 export const category: categoryType = {

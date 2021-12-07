@@ -120,12 +120,12 @@
   margin-top: 3rem;
 
   &_item {
-    margin-right: 1.5rem;
+    margin-right: 2rem;
+    width: 10rem;
 
     &_list {
       display: flex;
       justify-content: space-between;
-      margin-right: 1rem;
     }
 
     &_names {
@@ -140,11 +140,11 @@
   }
 
   &_poster {
-    height: 15rem;
-    width: 10rem;
-    background-position: center;
-    background-size: cover;
     box-shadow: 0 1.5rem 4rem rgba($black, .6);
-    background-repeat: no-repeat;
+
+    img{
+      height: 15rem;
+      width: 100%;
+    }
   }
 }
