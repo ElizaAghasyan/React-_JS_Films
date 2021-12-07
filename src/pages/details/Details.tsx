@@ -55,12 +55,10 @@ const Details = () => {
     return (
         <div className={styles.details}>
             <div className={styles.header_styles}>
-                <Link to='/'>
-                    <Header />
-                </Link>
+                <Header />
             </div>
             <div className={styles.background} style={{backgroundImage: `url(${background})`}}>
-                <div className={styles.background_content_background} style={{backgroundImage: `url(${apiConfig.imageURL(items.backdrop_path || items.poster_path)})`}}> </div>
+                <div className={styles.background_content_background} style={{backgroundImage: `url(${apiConfig.imageURL(items.backdrop_path || items.poster_path)})`}}/>
                 <div className={styles.background_info}>
                     <h1>{items.title}</h1>
                     <div className={styles.background_info_genres}>

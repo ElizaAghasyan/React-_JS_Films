@@ -43,6 +43,7 @@ const MovieCard = ({item}: movieCardProps) => {
     const [active, setActive] = useState<boolean>(false)
     const classes = useStyles();
     const detailsRef = useRef<HTMLIFrameElement | null>(null);
+    const cardRef = useRef<HTMLIFrameElement | null>(null!);
 
     const link = '/' + category.movie + '/' + item?.id;
 
@@ -59,21 +60,21 @@ const MovieCard = ({item}: movieCardProps) => {
     }
 
     return (
-        <div className={styles.card}>
+        <div ref={cardRef} className={styles.card}>
             <div className={`${styles.card_side_front} ${styles.card_side} `}>
                 <div className={styles.card_pic} style={{backgroundImage: `url(${bg})`}}>
                 </div>
-                <div className={styles.card_description}>
-                    <div className={styles.card_description_header}>
-                        <Link to={link}>
+                <Link to={link}>
+                    <div className={styles.card_description}>
+                        <div className={styles.card_description_header}>
                             <h3 className={styles.card_heading}>{item?.title || item?.name}</h3>
-                        </Link>
-                        <p className={styles.card_genre}>Adventure Comedy Family</p>
+                            <p className={styles.card_genre}>Adventure Comedy Family</p>
+                        </div>
+                        <button className={styles.card_rating}>{item?.vote_average}</button>
                     </div>
-                    <button className={styles.card_rating}>{item?.vote_average}</button>
-                </div>
+                </Link>
             </div>
-            <div className={`${styles.card_side_back} ${styles.card_side}`}>
+            <div ref={cardRef} className={`${styles.card_side_back} ${styles.card_side}`}>
                 <PlayCircleFilledIcon onClick={setModalActive} className={classes.play}/>
                 <h3 className={styles.card_watch}>Watch Now</h3>
                 <button onClick={handleClick} className={styles.card_btn}>View Info</button>
