@@ -2,9 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import movieApi from '../../config/movieApi';
 
-const DetailVideos = () => {
+const DetailVideos = ({id}: any) => {
     const { category } = useParams<{category: string}>();
-    const { id } = useParams<{id: string}>();
     const [videos, setVideos ] = useState<any[]>([]);
 
     useEffect(() => {

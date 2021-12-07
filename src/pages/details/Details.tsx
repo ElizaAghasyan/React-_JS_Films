@@ -10,7 +10,7 @@ import MovieCard from "../../components/movieCard/MovieCard";
 import Header from "../../components/header/Header";
 
 type detailTypes = {
-    id: number;
+    id: number | string;
     title: string;
     overview: string;
     poster_path: string;
@@ -24,7 +24,7 @@ type detailTypes = {
     }[];
 }
 
-const Details = () => {
+const Details = (props: detailTypes) => {
     const { category } = useParams<{category: string}>();
     const { id } = useParams<{id: string}>();
 
@@ -71,13 +71,12 @@ const Details = () => {
                     <p className={styles.background_info_overview}>{items.overview}</p>
                     <div className={styles.castTitle}>
                         <h2>Cast</h2>
-                        <CastList />
+                        <CastList id={items.id} />
                     </div>
-
                 </div>
             </div>
             <div className={styles.details_videoList}>
-                <DetailVideos />
+                <DetailVideos id={items.id} />
             </div>
             <div className={styles.details_similar}>
                 {

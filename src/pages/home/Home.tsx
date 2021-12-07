@@ -4,10 +4,10 @@ import Banner from "../../components/banner/Banner";
 import { category, movieType } from "../../config/movieApi";
 import movieApi from '../../config/movieApi';
 import Navigation from "../../components/navigation/Navigation";
-
 import MovieList from "../../components/movieList/MovieList";
-import LoadingDots from "../../components/loading/Loading";
 import Footer from "../../components/footer/Footer";
+import Loading from "../../components/loading/Loading";
+
 const styles = require("./Home.module.scss");
 
 export type StateProperties = {
@@ -77,7 +77,7 @@ const Home = () => {
             <Navigation click={handleClick} />
             <MovieList item={movie} category={category.movie} />
             <div onClick={loadMore}>
-                <LoadingDots  />
+                <Loading  />
             </div>
             <Footer />
         </div>
