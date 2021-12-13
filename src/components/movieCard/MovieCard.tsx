@@ -4,9 +4,9 @@ import { category } from "../../config/movieApi";
 import { useRef, useState } from "react";
 import TrailerModal from "../modal/TrailerModal";
 
+import { makeStyles } from "@mui/styles";
 import styles from './MovieCard.module.scss';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
-import { makeStyles } from "@mui/styles";
 import CloseIcon from "@mui/icons-material/Close";
 
 

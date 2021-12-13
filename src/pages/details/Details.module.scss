@@ -1,15 +1,6 @@
 @import 'src/scss/mixin';
 @import 'src/scss/variables';
 
-.header_styles {
-  width: 100%;
-  background-color: rgba(0,0,0,0.3);
-  height: 7rem;
-  position: fixed;
-  z-index: 1;
-  box-shadow: 0 -1rem 1.5rem #000;
-}
-
 .details {
   background-color: $black;
 
@@ -27,7 +18,6 @@
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 5rem;
-
 
     &_item {
       width: 28rem;

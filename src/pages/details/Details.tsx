@@ -54,9 +54,6 @@ const Details = (props: detailTypes) => {
 
     return (
         <div className={styles.details}>
-            <div className={styles.header_styles}>
-                <Header />
-            </div>
             <div className={styles.background} style={{backgroundImage: `url(${background})`}}>
                 <div className={styles.background_content_background} style={{backgroundImage: `url(${apiConfig.imageURL(items.backdrop_path || items.poster_path)})`}}/>
                 <div className={styles.background_info}>
@@ -85,7 +82,6 @@ const Details = (props: detailTypes) => {
                             <MovieCard item={item}/>
                         </div>
                     ))
-
                 }
             </div>
         </div>

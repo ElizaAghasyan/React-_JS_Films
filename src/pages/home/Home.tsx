@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../components/header/Header";
 import Banner from "../../components/banner/Banner";
 import { category, movieType } from "../../config/movieApi";
 import movieApi from '../../config/movieApi';
 import Navigation from "../../components/navigation/Navigation";
 import MovieList from "../../components/movieList/MovieList";
-import Footer from "../../components/footer/Footer";
 import Loading from "../../components/loading/Loading";
 
 const styles = require("./Home.module.scss");
@@ -72,14 +70,12 @@ const Home = () => {
 
     return (
         <div className={styles.wrapper}>
-            <Header />
             <Banner />
             <Navigation click={handleClick} />
             <MovieList item={movie} category={category.movie} />
             <div onClick={loadMore}>
                 <Loading  />
             </div>
-            <Footer />
         </div>
     );
 }

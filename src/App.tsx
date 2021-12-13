@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { fetchAsyncMovies } from "./redux/movieSlice";
 import {Routes} from "./routes/Routes";
 import {Route} from "react-router-dom";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 const styles = require("./App.module.scss");
 
@@ -16,11 +18,13 @@ const App = () => {
 
   return (
     <div className={styles}>
+      <Header />
       <Route render={() => (
-         <div className={styles}>
+        <div className={styles}>
           <Routes />
         </div>
       )}/>
+      <Footer />
     </div>
   );
 }
