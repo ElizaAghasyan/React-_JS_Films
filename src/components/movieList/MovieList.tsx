@@ -14,7 +14,6 @@ interface Item {
 
 type MovieListProps = {
     item: Item[];
-    category: {}
 }
 
 const MovieList = (props: MovieListProps) => {

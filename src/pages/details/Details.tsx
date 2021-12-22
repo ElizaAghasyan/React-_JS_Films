@@ -68,12 +68,12 @@ const Details = (props: detailTypes) => {
                     <p className={styles.background_info_overview}>{items.overview}</p>
                     <div className={styles.castTitle}>
                         <h2>Cast</h2>
-                        <CastList id={items.id} />
+                        <CastList />
                     </div>
                 </div>
             </div>
             <div className={styles.details_videoList}>
-                <DetailVideos id={items.id} />
+                <DetailVideos />
             </div>
             <div className={styles.details_similar}>
                 {

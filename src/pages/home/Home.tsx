@@ -72,7 +72,7 @@ const Home = () => {
         <div className={styles.wrapper}>
             <Banner />
             <Navigation click={handleClick} />
-            <MovieList item={movie} category={category.movie} />
+            <MovieList item={movie} />
             <div onClick={loadMore}>
                 <Loading  />
             </div>

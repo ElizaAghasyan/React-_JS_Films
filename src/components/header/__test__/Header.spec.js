@@ -7,7 +7,7 @@ describe('Header Component', () => {
     test("Renders Header Title", () => {
         render(<Header />);
 
-        const headerTitle = screen.getByText("Films");
+        const headerTitle = screen.getByText(/Films/g);
         expect(headerTitle).toBeInTheDocument();
     });
 

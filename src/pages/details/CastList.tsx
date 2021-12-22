@@ -15,8 +15,9 @@ type castTypes = {
     profile_path: string
 }
 
-const CastList = ({id}: any) => {
+const CastList = () => {
     const { category } = useParams<{category: string}>();
+    const { id } = useParams<{id: string}>();
     const [cast, setCast] = useState<castTypes[]>([]);
 
     useEffect(() => {
