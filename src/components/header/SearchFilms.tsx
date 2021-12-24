@@ -1,33 +1,29 @@
-
-import {useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import {useHistory} from "react-router-dom";
-
-const styles = require("./Header.module.scss");
 
 const SearchFilms = () => {
     const history = useHistory();
     const [keyword, setKeyword] = useState('');
 
-    const search = async () => {
+    const searches = () => {
         if(keyword.trim().length > 0) {
-            history.push(keyword);
+            history.push(`/search?movie=${keyword}`);
         }
     }
 
     useEffect(() => {
-        const enterEvt = (e: any) => {
-            e.preventDefault();
-
+        const enterEvt = (e: KeyboardEvent) => {
             if(e.keyCode === 13) {
-                search();
+                searches();
             }
         }
-        document.addEventListener('keyup', enterEvt);
+
+        document.addEventListener('keyup', enterEvt );
         return () => {
             document.removeEventListener('keyup', enterEvt)
         }
-    }, [keyword, search]);
+    }, [keyword, searches]);
 
     return (
         <>

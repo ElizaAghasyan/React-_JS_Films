@@ -32,8 +32,8 @@ const Navigation = (props: KeyboardEvent) => {
           <div className={styles.button_content}>
               <ul>
                   {
-                      navigation.map((heading, i) => (
-                          <li onClick={props.click} value={heading.display} key={i} className={styles.buttons}>
+                      navigation.map((heading) => (
+                          <li onClick={props.click} value={heading.display} key={heading.display} className={styles.buttons}>
                               {heading.display}
                           </li>
                       ))

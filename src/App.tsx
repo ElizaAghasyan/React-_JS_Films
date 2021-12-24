@@ -16,6 +16,7 @@ const App = () => {
     dispatch(fetchAsyncMovies());
   }, [dispatch]);
 
+
   return (
     <div className={styles}>
       <Header />

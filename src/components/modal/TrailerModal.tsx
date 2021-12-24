@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import movieApi, { category } from "../../config/movieApi";
+import {category, getVideo} from "../../config/movieApi";
 
 import './TrailerModal.scss';
 import CloseIcon from "@mui/icons-material/Close";
@@ -30,7 +30,7 @@ const TrailerModal = ({ active, id }: TrailerModalType ) => {
         const getVideos = async () => {
             let  videos;
             if(id) {
-                videos = await movieApi.getVideos(category.movie, id);
+                videos = await getVideo(category.movie, id);
             }
 
             if (videos?.data.results && videos.data.results.length > 0) {

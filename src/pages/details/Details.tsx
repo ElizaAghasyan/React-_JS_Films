@@ -1,13 +1,12 @@
-import {Link, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import movieApi from "../../config/movieApi";
+import {detail, getSimilar} from "../../config/movieApi";
 import { apiConfig } from "../../config/apiConfig";
 
 import styles from './Details.module.scss';
 import CastList from "./CastList";
 import DetailVideos from "./DetailVideos";
 import MovieCard from "../../components/movieCard/MovieCard";
-import Header from "../../components/header/Header";
 
 type detailTypes = {
     id: number | string;
@@ -32,16 +31,16 @@ const Details = (props: detailTypes) => {
     const [similar, setSimilar] = useState<detailTypes[] | any>([])
 
     useEffect(() => {
-        const getSimilar = async () => {
-            let  res = await movieApi.similar(category, id);
+        const getSimilarMovies = async () => {
+            let  res = await getSimilar(category, id);
             setSimilar(res.data.results.slice(0, 5))
         }
-        getSimilar()
+        getSimilarMovies()
     }, [category, id])
 
     useEffect(() => {
         const getDetails = async () => {
-            let result = await movieApi.detail(category, id, {params: {}});
+            let result = await detail(category, id, {params: {}});
             window.scrollTo(0, 0)
             setItems(result.data);
         }
@@ -60,8 +59,8 @@ const Details = (props: detailTypes) => {
                     <h1>{items.title}</h1>
                     <div className={styles.background_info_genres}>
                         {
-                            items.genres && items.genres.slice(0, 5).map((genre: detailTypes, i: number) => (
-                                <span key={i}>{genre.name}</span>
+                            items.genres && items.genres.slice(0, 5).map((genre: detailTypes) => (
+                                <span key={genre.id}>{genre.name}</span>
                             ))
                         }
                     </div>

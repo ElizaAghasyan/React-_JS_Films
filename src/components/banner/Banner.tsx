@@ -5,7 +5,7 @@ import { getBannerMovie } from "../../redux/movieSlice";
 import { apiConfig } from "../../config/apiConfig";
 import { Rating } from "react-simple-star-rating";
 
-import styles from './Banner.module.scss';
+const styles = require('./Banner.module.scss');
 
 const Banner = () => {
     const movie = useSelector(getBannerMovie);
@@ -57,7 +57,7 @@ const Banner = () => {
                 <div className={show ? `${styles.active} ${styles.details}` : `${styles.details}`}>
                     {movie?.overview}
                 </div>
-                <TrailerModal active={active} id={movie?.id}/>
+                {active && <TrailerModal active={active} id={movie?.id}/>}
             </div>
         </div>
     )

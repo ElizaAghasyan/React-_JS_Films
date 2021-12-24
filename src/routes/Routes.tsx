@@ -8,7 +8,7 @@ export const Routes = () => {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/:category/:id' component={Details} />
-            <Route path='/:keyword' component={SearchPage} />
+            <Route path='/:search' component={SearchPage} />
         </Switch>
     );
 }
