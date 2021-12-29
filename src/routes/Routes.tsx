@@ -6,9 +6,9 @@ import SearchPage from "../pages/searchPage/SearchPage";
 export const Routes = () => {
     return (
         <Switch>
+            <Route path="/:category/:id" component={Details} />
+            <Route path="/:keyword" component={SearchPage} />
             <Route exact path='/' component={Home} />
-            <Route path='/:category/:id' component={Details} />
-            <Route path='/:search' component={SearchPage} />
         </Switch>
     );
 }

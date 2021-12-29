@@ -43,7 +43,7 @@ const Home = () => {
         setPage(page + 1)
     }
 
-    const handleClick = (e: { target: HTMLElement }) => {
+    const handleClick= (e: any) => {
         const getData = async () => {
             let response;
             let li = e.target.innerText

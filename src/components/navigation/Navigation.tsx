@@ -1,5 +1,5 @@
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import React from "react";
+import React, {MouseEventHandler} from "react";
 
 const styles = require("./Navigation.module.scss");
 
@@ -22,9 +22,9 @@ const navigation = [
     },
 ]
 
-type KeyboardEvent = {
-    click: (e: any) => void
-};
+interface KeyboardEvent  {
+    click: MouseEventHandler<HTMLElement>
+}
 
 const Navigation = (props: KeyboardEvent) => {
     return (

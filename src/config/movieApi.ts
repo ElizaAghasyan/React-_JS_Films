@@ -1,5 +1,4 @@
 import {axiosCreate} from './axiosCreate';
-import axios from "axios";
 
 type categoryType = {[key:string]: string}
 export const category: categoryType = {
@@ -16,7 +15,7 @@ export const movieType: movieTypeObj = {
 }
 
 export const getMovieList = (type: string, params: {}) => {
-    const url = 'movie/' + movieType[type];
+    const url = "movie/" + movieType[type];
     return axiosCreate.get(url, params);
 };
 
@@ -31,7 +30,7 @@ export const getVideo = (cat: string, id: number | string) => {
 };
 
 export const searchFilms = (query: string, params: {}) => {
-    const url = 'search/' + category[query];
+    const url = "search/" + category[query] ;
     return axiosCreate.get(url, params);
 };
 
