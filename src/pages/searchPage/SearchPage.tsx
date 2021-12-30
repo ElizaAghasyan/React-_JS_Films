@@ -17,12 +17,12 @@ const SearchPage = () => {
 
     useEffect(() => {
         const searchApi = async () => {
-            if(!movie) {
+            if(!query) {
                 return
             }
             let response;
             const params = {
-                movie
+                query: movie
             }
             try {
                 response = await searchFilms(category.movie, {params})
@@ -31,7 +31,6 @@ const SearchPage = () => {
             }catch (e: any) {
                 console.log(e)
             }
-
         }
         searchApi()
     }, [ movie ])

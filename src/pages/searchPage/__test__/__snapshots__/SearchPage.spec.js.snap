@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Page Search page snapshot test 1`] = `
+<div
+  className="list"
+>
+  <h1
+    className="list_query"
+  >
+    Search results for 
+     
+  </h1>
+  <div
+    className="cards"
+  />
+  <div
+    className="list_loadMore"
+    onClick={[Function]}
+  >
+    <div
+      className="dots"
+    >
+      <div
+        className="loading"
+      >
+        <button
+          className="loading_btn"
+        >
+          Loading
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -16,6 +16,7 @@ const SearchFilms = () => {
         e.preventDefault();
         if(e.keyCode === 13) {
             searches();
+            setKeyword("")
         }
 
         document.addEventListener('keyup', handleSubmit );

@@ -23,7 +23,7 @@ const navigation = [
 ]
 
 interface KeyboardEvent  {
-    click: MouseEventHandler<HTMLElement>
+    click: MouseEventHandler
 }
 
 const Navigation = (props: KeyboardEvent) => {

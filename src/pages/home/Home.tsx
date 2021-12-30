@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import Banner from "../../components/banner/Banner";
 import {getMovieList, getTrending, movieType} from "../../config/movieApi";
 import Navigation from "../../components/navigation/Navigation";
