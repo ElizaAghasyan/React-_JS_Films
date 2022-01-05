@@ -5,26 +5,13 @@ exports[`Loading Component Loading snapshot test 1`] = `
   className="dots"
 >
   <div
-    className="spinner"
+    className="loading"
   >
-    <div
-      className="dot1"
+    <button
+      className="loading_btn"
     >
-       
-    </div>
-    <div
-      className="dot2"
-    >
-       
-    </div>
-    <div
-      className="dot3"
-    >
-       
-    </div>
+      Loading
+    </button>
   </div>
-  <p>
-    LOADING
-  </p>
 </div>
 `;

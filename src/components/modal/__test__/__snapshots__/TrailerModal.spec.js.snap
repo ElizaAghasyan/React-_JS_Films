@@ -9,7 +9,7 @@ exports[`TrailerModal Component TrailerModal snapshot test 1`] = `
   >
     <iframe
       frameBorder="0"
-      height="500px"
+      height="450px"
       title="trailer"
       width="100%"
     />
