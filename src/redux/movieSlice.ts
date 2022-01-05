@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import serverApi, {movieType} from "../config/movieApi";
+import {getMovieList, movieType} from "../config/movieApi";
 
 const initialState = {
     movies: {},
@@ -19,7 +19,7 @@ interface MovieType  {
 
 export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async () => {
     const params = {page: 1}
-    let response = await serverApi.getMovieList(movieType.popular, {params})
+    let response = await getMovieList(movieType.popular, {params})
         .catch(err => {
             console.log(err)
         })
@@ -38,7 +38,7 @@ export const movieSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchAsyncMovies.pending, (state, action) => {
-            console.log("Pending...")
+            // console.log("Pending...")
         })
         builder.addCase(fetchAsyncMovies.fulfilled, (state: {}, action) => {
             return {
@@ -46,7 +46,7 @@ export const movieSlice = createSlice({
             }
         })
         builder.addCase(fetchAsyncMovies.rejected, (state, action) => {
-            console.log("Pending...")
+            // console.log("Rejected...")
         })
     }
 });

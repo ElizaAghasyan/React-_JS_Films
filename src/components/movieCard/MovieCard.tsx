@@ -97,7 +97,7 @@ const MovieCard = ({item}: movieCardProps) => {
                     </div>
                 </div>
             </div>
-            <TrailerModal active={active} id={item?.id}/>
+            {active && <TrailerModal active={active} id={item?.id}/>}
         </div>
     );
 }

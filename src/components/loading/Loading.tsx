@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import styles from './Loading.module.scss'
 
 const Loading = () => {
-    const [loading, _] = useState(true);
-
+    const loading = true
     return (
         <div className={styles.dots}>
             {loading ?(

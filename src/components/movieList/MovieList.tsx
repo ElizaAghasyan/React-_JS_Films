@@ -2,7 +2,7 @@ import styles from './MovieList.module.scss';
 import MovieCard from "../movieCard/MovieCard";
 
 interface Item {
-    id: number;
+    id: number | string;
     title: string;
     overview: string;
     poster_path: string;
@@ -14,7 +14,6 @@ interface Item {
 
 type MovieListProps = {
     item: Item[];
-    category: {}
 }
 
 const MovieList = (props: MovieListProps) => {

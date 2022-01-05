@@ -1,0 +1,18 @@
+@import '../../scss/mixin';
+@import '../../scss/variables';
+
+.list {
+  position: relative;
+  top: 5rem;
+
+  &_query {
+    margin: 5rem 2rem 0;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: $main-color;
+  }
+
+  &_loadMore {
+    margin: 3rem 0 7rem;
+  }
+}
