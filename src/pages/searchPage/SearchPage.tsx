@@ -33,7 +33,7 @@ const SearchPage = () => {
             }
         }
         searchApi()
-    }, [ movie ])
+    }, [])
 
     const loadMore = async () => {
         const params = {
